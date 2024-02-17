@@ -1,11 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="light" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Ticketing</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/design.css">
 </head>
-<body>
+<body class="p-20">
+    <header class="ml-28">
+        <!-- navbar section -->
+        <nav class="flex justify-between mb-8">
+            <div>
+                <p class="text-[#030712] text-4xl font-extrabold">P-Ticket</p>
+            </div>
+            
+            <div class="text-[#030712B3] text-lg font-medium">
+                <button >Home</button>
+                <button class="ml-8">About</button>
+                <button class="ml-8">Destination</button>
+                <button class="ml-8">Search</button>
+            </div>
+
+            <div class="flex mr-20 gap-2 rounded-lg border border-solid border-[#1DD10066] bg-[#1DD1001A] w-24 h-10 justify-center items-center">
+                <p>Bus</p>
+                <img class="w-5 h-5" src="images/bus-icon.png" alt="">
+            </div>
+        </nav>
+
+        <!-- banner section -->
+        
+        <div class="text-center relative bg-[url(images/banner.png)] w-[1171px] h-[550px] mb-[190px] ">
+          
+            <p class="text-white absolute mt-16 ml-[215px] text-6xl font-extrabold">End-to-End Travel with<p>
+            <p class="text-[#1DD100] absolute mt-40 ml-[400px] text-6xl font-extrabold">P Paribahan</p>
+            <p class="text-white absolute mt-[258px] ml-[280px] text-lg font-normal">Yes, you can run unit tests and view the results directly within the app. <br> The integrated testing features allow for a streamlined .</p>
+            <button class="absolute mt-[350px] ml-[500px] h-12 flex justify-center items-center rounded-xl bg-[#1DD100] p-5 text-[#030712] text-xl font-bold">Buy Tickets</button>
+
+        </div>
+    </header>
+
+    <main>
+        <p class="text-[#030712] text-center text-4xl font-bold mb-12">Best offers for you</p>
+
+        <div class="flex gap-6 mb-16">
+            <div class="flex justify-between ml-24 rounded-3xl bg-[#FFBF0F] w-[573px] h-[220px]">
+                <div class="p-12">
+                    <p class="text-[#030712CC] text-4xl font-black">15% OFF</p>
+                    <p class="text-[#030712CC] text-xl font-semibold">on your next purchase</p>
+                    <p class="text-[#03071280] text-lg font-medium">use by January 2024</p>
+                </div>
     
+                <div>
+                    <img src="images/cupon-devider.png" alt="">
+                </div>
+    
+                <div class="p-12"> 
+                    <p class="text-[#030712] text-3xl font-bold">NEW15</p>
+                    <p class="text-[#03071266] text-xl font-medium">Coupon Code</p>
+                </div>
+            </div>
+
+            <div class="flex justify-between rounded-3xl bg-[#F78C9C] w-[573px] h-[220px]">
+                <div class="p-12">
+                    <p class="text-[#030712CC] text-4xl font-black">20% OFF</p>
+                    <p class="text-[#030712CC] text-xl font-semibold">on your next purchase</p>
+                    <p class="text-[#03071280] text-lg font-medium">use by January 2024</p>
+                </div>
+    
+                <div>
+                    <img src="images/cupon-devider.png" alt="">
+                </div>
+    
+                <div class="p-12"> 
+                    <p class="text-[#030712] text-3xl font-bold">Couple20</p>
+                    <p class="text-[#03071266] text-xl font-medium">Coupon Code</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="flex justify-center items-center rounded-xl border border-solid border-[#1DD100] p-7 h-12 ml-[590px] text-xl font-bold text-[#1DD100] mb-[120px]">See All Offers</button>
+        
+    </main>
+
+    <footer>
+        <div class="bg-[#030712] w-[1430px] h-[457px] ">
+            <div class="flex justify-between">
+                <div>
+                    <p class="text-white text-4xl font-extrabold">P-Ticket</p>
+                    <p class="text-[#FFFFFFCC] text-lg font-normal">P-Ticket is a digital platform to make your <br> daily commuting better.</p>
+                </div>
+    
+                <div>
+                    <p class="text-white text-xl font-semibold">Download our app</p>
+                    <img src="images/playstore.png" alt="">
+                </div>
+            </div>
+            
+            <div class="bg-[#FFFFFF4D] w-[1170px] h-[1px]">
+
+            </div>
+            
+            <div class="flex justify-between">
+                <p>@all rights reserved, P-Ticket services limited.2024</p>
+                <div class="flex gap-5">
+                    <p>Terms & condition</p>
+                    <p>Return & refund policy</p>
+                    <p>Privacy policy</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
