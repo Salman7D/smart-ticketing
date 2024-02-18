@@ -139,24 +139,24 @@
                     <div class="flex">
                         <div>
                             <div class="flex gap-8">
-                                <button class="seat flex justify-center items-center ml-[71px] mb-6 rounded-xl bg-[#F7F8F8] w-[110px] h-[56px]">
+                                <button onclick="changeColor(this)" class="seat flex justify-center items-center ml-[71px] mb-6 rounded-xl bg-[#F7F8F8] w-[110px] h-[56px]">
                                     <p>A1</p>
                                     <h6 class="hidden">Economoy</h6>
                                     <span class="hidden">550</span>
                                 </button>
-                                <button class="seat flex justify-center items-center mb-6 rounded-xl bg-[#F7F8F8] w-[110px] h-[56px]">
+                                <button onclick="changeColor(this)" class="seat flex justify-center items-center mb-6 rounded-xl bg-[#F7F8F8] w-[110px] h-[56px]">
                                     <p>A2</p>
                                     <h6 class="hidden">Economoy</h6>
                                     <span class="hidden">550</span>
                                 </button>
                             </div>
                             <div class="flex gap-8">
-                                <button class="seat flex justify-center items-center ml-[71px] mb-6 rounded-xl bg-[#F7F8F8] w-[110px] h-[56px]">
+                                <button onclick="changeColor(this)" class="seat flex justify-center items-center ml-[71px] mb-6 rounded-xl bg-[#F7F8F8] w-[110px] h-[56px]">
                                     <p>B1</p>
                                     <h6 class="hidden">Economoy</h6>
                                     <span class="hidden">550</span>
                                 </button>
-                                <button class="seat flex justify-center items-center mb-6 rounded-xl bg-[#F7F8F8] w-[110px] h-[56px]">
+                                <button onclick="changeColor(this)" class="seat flex justify-center items-center mb-6 rounded-xl bg-[#F7F8F8] w-[110px] h-[56px]">
                                     <p>B2</p>
                                     <h6 class="hidden">Economoy</h6>
                                     <span class="hidden">550</span>
@@ -417,14 +417,20 @@
                             <p class="text-[#030712] text-base font-medium">BDT <span id="totalPrice"></span></p>
                         </div>
 
-                        <label class="input flex items-center gap-2 w-[369px] h-[56px] ml-10">
+                        <div class="hidden ml-10 mr-10 mb-4 flex justify-between">
+                            <p class="text-[#030712] text-base font-medium">Discount Price</p>
+                            <p class="text-[#030712] text-base font-medium">BDT <span id="discountPrice"></span></p>
+                        </div>
+
+
+                        <label id="field" class="input flex items-center gap-2 w-[369px] h-[56px] ml-10">
                             <input id="input-field" type="text" class="grow" placeholder="Have any copupon?" />
-                            <button id="apply-button" class="rounded-lg bg-[#1DD100] w-[80px] h-[40px] text-white text-base font-semibold">Apply</button>
+                            <button onclick="hide()" id="apply-button" class="rounded-lg bg-[#1DD100] w-[80px] h-[40px] text-white text-base font-semibold">Apply</button>
                           </label>
                         
                           <div class="mt-6 ml-10 mr-10 mb-4 flex justify-between">
                             <p class="text-[#030712] text-base font-medium">Grand Total</p>
-                            <p class="text-[#030712] text-base font-medium">BDT</p>
+                            <p class="text-[#030712] text-base font-medium">BDT <span id="grandTotal"></span></p>
                         </div>
                     </div>
 

@@ -3,14 +3,23 @@ let totalPrice = 0;
 let bdt = 550;
 
 const seats = document.querySelectorAll(".seat");
+
 // console.log(seat);
 
 for(let index = 0; index < seats.length; index++){
     const seat = seats[index];
+    
     // console.log(seat);
+    function changeColor(event){
+        
+        event.style.backgroundColor = "#1DD100";
+    }
+
+    
 
     seat.addEventListener("click", function(){
         // console.log("I love you");
+        
         const title = seat.querySelector("p").innerText;
 
         const clas = seat.querySelector("h6").innerText;
@@ -40,8 +49,8 @@ for(let index = 0; index < seats.length; index++){
         
         totalPrice += bdt;
         document.getElementById("totalPrice").innerText = totalPrice;
-        
-
+       
+       
     });
 
     
@@ -50,10 +59,44 @@ for(let index = 0; index < seats.length; index++){
 
 
 const btn = document.getElementById("apply-button");
+    
+    function hide(){
+    const hide = document.getElementById("field");
+    hide.classList.add("hidden");
+}
+
 btn.addEventListener("click", function(){
 
-   const couponElement = document.getElementById("input-field");
-   console.log(couponElement.value);
-    
+   const couponElement = document.getElementById("input-field").value;
+   console.log(couponElement);
 
+    if(totalPrice > 1600){
+        if(couponElement === "NEW15" || couponElement === "Couple 20"){
+            
+            // const visible = document.getElementById("apply-button");
+            // visible.style.display = "none";
+            hide();
+            
+            const discountElement = document.getElementById("discountPrice");
+            const discountPrice = totalPrice * 0.2;
+            discountElement.innerText = discountPrice;
+
+            const grandTotal = document.getElementById("grandTotal");
+            grandTotal.innerText = totalPrice - discountPrice;
+            document.getElementById("input-field").value = "";
+
+        }
+        
+        else{
+            alert("Invalid Coupon Code");
+            document.getElementById("input-field").value = "";
+        }
+    }
+
+    else{
+        alert("You should be buy 4 tickects then you serve this");
+        document.getElementById("input-field").value = "";
+    }
+
+    
 });
