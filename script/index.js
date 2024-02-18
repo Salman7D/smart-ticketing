@@ -19,6 +19,23 @@ for(let index = 0; index < seats.length; index++){
 
     seat.addEventListener("click", function(){
         // console.log("I love you");
+
+        const currentScoreElement = document.getElementById("curret-score");
+        const currentScoreText = currentScoreElement.innerText;
+        const currentScore = parseInt(currentScoreText);
+        console.log(currentScoreText);
+
+        const newScore = currentScore + 1;
+
+        currentScoreElement.innerText = newScore;
+
+        const currentLifeElement = document.getElementById("current-life");
+        const currentLifeText = currentLifeElement.innerText;
+        const currntLife = parseInt(currentLifeText);
+
+        const newLife = currntLife - 1;
+
+        currentLifeElement.innerText = newLife;
         
         const title = seat.querySelector("p").innerText;
 
@@ -69,6 +86,8 @@ btn.addEventListener("click", function(){
 
    const couponElement = document.getElementById("input-field").value;
    console.log(couponElement);
+
+   
 
     if(totalPrice > 1600){
         if(couponElement === "NEW15" || couponElement === "Couple 20"){
