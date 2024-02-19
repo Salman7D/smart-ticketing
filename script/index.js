@@ -1,5 +1,6 @@
 let totalPrice = 0;
 let bdt = 550;
+let discountPrice = 0;
 let totalClicks = 0;
 const maxClicks = 4;
 
@@ -19,6 +20,10 @@ function changeColor(event){
         event.disabled = true;
         totalClicks++;
 
+        if(totalClicks === 0){
+            const next = document.getElementById("next");
+            next.classList.add("hidden");
+        }
         if(totalClicks >= maxClicks){
             disableAllSeats();
             
@@ -43,16 +48,6 @@ for(let index = 0; index < seats.length; index++){
         changeColor(this);
     });
    
-    // function changeColor(seat){
-    //     const title = seat.querySelector("p").innerText;
-    //     const clas = seat.querySelector("h6").innerText;
-    //     const price = seat.querySelector("span").innerText;
-
-    //     const output = `${title} ${clas} ${price}`; 
-        
-    //     const titleContainer = document.getElementById("title-container");
-    //     titleContainer.innerText = output;
-    // }
     
     seat.addEventListener("click", function(){
    
@@ -76,43 +71,39 @@ for(let index = 0; index < seats.length; index++){
             
             const title = seat.querySelector("p").innerText;
     
-            // const clas = seat.querySelector("h6").innerText;
+            const clas = seat.querySelector("h6").innerText;
     
-            // const price = seat.querySelector("span").innerText;
+            const price = seat.querySelector("span").innerText;
     
             const titleContainer = document.getElementById("title-container");
-            // // console.log(titleContainer);
-
-            // // const div = document.createElement("div");
+            
+            const tr = document.createElement("tr");
     
-            const p = document.createElement("li");
+            const p = document.createElement("td");
             p.innerText = title;
             titleContainer.appendChild(p);
             
     
-            // const h6 = document.createElement("li");
-            // h6.innerText = clas;
-            // titleContainer.appendChild(h6);
+            const h6 = document.createElement("td");
+            h6.innerText = clas;
+            titleContainer.appendChild(h6);
     
-            // const span = document.createElement("li");
-            // span.innerText = price;
-            // titleContainer.appendChild(span);
+            const span = document.createElement("td");
+            span.innerText = price;
+            titleContainer.appendChild(span);
 
-            // div.append(p);
-            // div.append(h6);
-            // div.append(span);
+            tr.append(p);
+            tr.append(h6);
+            tr.append(span);
 
-            // div.classList.add("flex justify-between");
-            // titleContainer.append(div);
-            
-            // p.innerText = clas;
-            // titleContainer.appendChild(p);
-            // p.innerText = price;
-            // titleContainer.appendChild(p);
-            // console.log(title, clas, price);
+            titleContainer.append(tr);
             
             totalPrice += bdt;
+            discountPrice += bdt;
             document.getElementById("totalPrice").innerText = totalPrice;
+            document.getElementById("grandTotal").innerText = discountPrice;
+
+            
        
     });
 
@@ -143,6 +134,8 @@ btn.addEventListener("click", function(){
             const discountPrice = totalPrice * 0.2;
             discountElement.innerText = discountPrice;
 
+            discountElement.classList.add("hidden");
+
             const grandTotal = document.getElementById("grandTotal");
             grandTotal.innerText = totalPrice - discountPrice;
             document.getElementById("input-field").value = "";
@@ -171,11 +164,18 @@ number.addEventListener("keyup", function(e){
     const value = e.currentTarget.value;
 
     if(value === ""){
+        
         bttn.disabled = true;
     }
 
     else{
-        bttn.disabled = false;
+        if(totalClicks === 0){
+            bttn.disabled = true; 
+        }
+        else{
+            bttn.disabled = false;
+        }
+        
     }
 
     
