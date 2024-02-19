@@ -4,14 +4,6 @@ let discountPrice = 0;
 let totalClicks = 0;
 const maxClicks = 4;
 
-// function scrollToSection(sectionId){
-//     let section = document.getElementById(sectionId);
-
-//     if(section){
-//         scrollToSection.scrollToSection({behavior: 'smooth'});
-//     }
-// }
-
 const seats = document.querySelectorAll(".seat");
 
 function changeColor(event){
@@ -36,8 +28,8 @@ function changeColor(event){
 function disableAllSeats() {
     for (let index = 0; index < seats.length; index++) {
         const seat = seats[index];
-        seat.removeEventListener("click", changeColor); // Remove the click event listener
-        seat.disabled = true; // Disable the button
+        seat.removeEventListener("click", changeColor); 
+        seat.disabled = true; 
     }
 }
 
@@ -76,6 +68,8 @@ for(let index = 0; index < seats.length; index++){
             const price = seat.querySelector("span").innerText;
     
             const titleContainer = document.getElementById("title-container");
+
+            const tBodyContainer = document.getElementById("tbody-container");
             
             const tr = document.createElement("tr");
     
@@ -97,6 +91,9 @@ for(let index = 0; index < seats.length; index++){
             tr.append(span);
 
             titleContainer.append(tr);
+
+            tBodyContainer.append(titleContainer);
+
             
             totalPrice += bdt;
             discountPrice += bdt;
@@ -124,9 +121,8 @@ btn.addEventListener("click", function(){
    const couponElement = document.getElementById("input-field").value;
    console.log(couponElement);
 
-    if(totalPrice > 1600){
+    if(totalPrice === 2200){
         if(couponElement === "NEW15" || couponElement === "Couple 20"){
-            
             
             hide();
             
@@ -190,15 +186,4 @@ function next(){
     const popUp = document.getElementById("popUp");
     popUp.classList.remove("hidden"); 
 }
-
-
-
-
-
-
-
-
-
-
-
 
