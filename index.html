@@ -117,7 +117,9 @@
                 </div>
 
             </div>
+        
 
+        
             <div class="flex rounded-3xl bg-white w-[1170px] h-[1056px] mt-6 ml-24">
                 <div>
                     <p class="text-[#030712] text-2xl font-semibold p-8">Select Your Seat</p>
@@ -392,12 +394,12 @@
 
                     
                 </div>
-
+         
                 <div>
                     <p class="text-[#030712] text-2xl font-semibold p-8">Select Your Seat</p>
                     <div class="bg-[#03071233] w-[409px] h-[1px] ml-8 mb-5"></div>
                     
-                    <div class="ml-8 rounded-xl bg-[#F7F8F8] w-[433px] h-[335px]">
+                    <div class="ml-8 rounded-xl bg-[#F7F8F8] w-[433px] h-[380px]">
                         <div class="p-8 flex justify-between mb-1">
                             <div class="flex gap-1">
                                 <p class="text-[#030712] text-base font-medium">Seat</p>
@@ -433,7 +435,7 @@
 
                         <label id="field" class="input flex items-center gap-2 w-[369px] h-[56px] ml-10">
                             <input id="input-field" type="text" class="grow" placeholder="Have any copupon?" />
-                            <button onclick="hide()" id="apply-button" class="rounded-lg bg-[#1DD100] w-[80px] h-[40px] text-white text-base font-semibold">Apply</button>
+                            <button id="apply-button" class="rounded-lg bg-[#1DD100] w-[80px] h-[40px] text-white text-base font-semibold">Apply</button>
                           </label>
                         
                           <div class="mt-6 ml-10 mr-10 mb-4 flex justify-between">
@@ -449,7 +451,7 @@
 
                     <div class="ml-9">
                         <p class="text-[#030712] text-base font-semibold mt-6">Phone Number*</p>
-                        <input class="mt-4 text-base font-normal rounded-lg border border-solid border-[#0307121A] w-[433px] h-[64px] p-5" type="number" placeholder="Enter your phone number">                 
+                        <input id="number" class="mt-4 text-base font-normal rounded-lg border border-solid border-[#0307121A] w-[433px] h-[64px] p-5" type="number" placeholder="Enter your phone number">                 
                     </div>
 
                     <div class="ml-9">
@@ -457,7 +459,7 @@
                         <input class="mt-4 mb-6 text-base font-normal rounded-lg border border-solid border-[#0307121A] w-[433px] h-[64px] p-5" type="email" placeholder="Enter your email id">                 
                     </div>
 
-                    <button onclick="next()" class="p-5 ml-9 rounded-2xl bg-[#1DD100] w-[433px] text-white text-xl font-extrabold">Next</button>
+                    <button onclick="next()" id="disabled" disabled class="p-5 ml-9 rounded-2xl bg-[#1DD100] w-[433px] text-white text-xl font-extrabold">Next</button>
 
                     <div class="ml-9 mt-6 flex gap-11">
                         <button class="text-[#03071299] text-base font-normal underline ml-12">Terms and Conditions</button>
@@ -469,32 +471,29 @@
 
     </main>
 
-    <footer>
-        <div class="bg-[#030712] w-[1430px] h-[457px] ">
+    <footer class="mt-[100px]">
+        <div class="relative bg-[#030712] w-[1430px] h-[470px] ">
             <div class="flex justify-between">
                 <div>
-                    <p class="text-white text-4xl font-extrabold">P-Ticket</p>
-                    <p class="text-[#FFFFFFCC] text-lg font-normal">P-Ticket is a digital platform to make your <br> daily commuting better.</p>
+                    <p class="absolute text-white text-4xl font-extrabold ml-[135px] mt-[120px]">P-Ticket</p>
+                    <p class="absolute text-[#FFFFFFCC] text-lg font-normal ml-[135px] mt-[178px]">P-Ticket is a digital platform to make your <br> daily commuting better.</p>
                 </div>
     
                 <div>
-                    <p class="text-white text-xl font-semibold">Download our app</p>
+                    <p class="mr-[135px] mt-[120px] text-white text-xl font-semibold">Download our app</p>
                     <img src="images/playstore.png" alt="">
                 </div>
             </div>
             
-            <div class="bg-[#FFFFFF4D] w-[1170px] h-[1px]">
+            <div class="absolute bg-[#FFFFFF4D] w-[1170px] h-[1px] mt-[100px] ml-[135px]">
 
             </div>
             
-            <div class="flex justify-between">
-                <p>@all rights reserved, P-Ticket services limited.2024</p>
-                <div class="flex gap-5">
-                    <p>Terms & condition</p>
-                    <p>Return & refund policy</p>
-                    <p>Privacy policy</p>
-                </div>
-            </div>
+            <p class="absolute text-[#FFFFFFB2] ml-[135px] mt-[180px] text-base font-normal">@all rights reserved, P-Ticket services limited.2024</p>
+
+            <p class="absolute ml-[826px] mt-[180px] text-[#FFF] text-base font-medium ">Terms & condition</p>
+            <p class="absolute ml-[996px] mt-[180px] text-[#FFF] text-base font-medium">Return & refund policy</p>
+            <p class="absolute ml-[1198px]  mt-[180px] text-[#FFF] text-base font-medium">Privacy policy</p>
         </div>
     </footer>
     <script src="script/index.js"></script>
@@ -502,7 +501,7 @@
 
 <section id="popUp" class="hidden">
    
-    <div class="relative rounded-2xl bg-slate-400 w-[718px] h-[481px] ml-[360px] mt-[30px] text-center ">
+    <div class="relative rounded-2xl bg-slate-100 w-[718px] h-[481px] ml-[360px] mt-[30px] text-center ">
         <img class="absolute ml-[314px] mt-[57px]" src="images/success.png" alt="">
         <div class="absolute mt-[193px] ml-[84px]">
 

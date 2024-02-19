@@ -3,6 +3,14 @@ let bdt = 550;
 let totalClicks = 0;
 const maxClicks = 4;
 
+// function scrollToSection(sectionId){
+//     let section = document.getElementById(sectionId);
+
+//     if(section){
+//         scrollToSection.scrollToSection({behavior: 'smooth'});
+//     }
+// }
+
 const seats = document.querySelectorAll(".seat");
 
 function changeColor(event){
@@ -35,16 +43,16 @@ for(let index = 0; index < seats.length; index++){
         changeColor(this);
     });
    
-    function changeColor(seat){
-        const title = seat.querySelector("p").innerText;
-        const clas = seat.querySelector("h6").innerText;
-        const price = seat.querySelector("span").innerText;
+    // function changeColor(seat){
+    //     const title = seat.querySelector("p").innerText;
+    //     const clas = seat.querySelector("h6").innerText;
+    //     const price = seat.querySelector("span").innerText;
 
-        const output = `${title} ${clas} ${price}`; 
+    //     const output = `${title} ${clas} ${price}`; 
         
-        const titleContainer = document.getElementById("title-container");
-        titleContainer.innerText = output;
-    }
+    //     const titleContainer = document.getElementById("title-container");
+    //     titleContainer.innerText = output;
+    // }
     
     seat.addEventListener("click", function(){
    
@@ -66,20 +74,20 @@ for(let index = 0; index < seats.length; index++){
             currentLifeElement.innerText = newLife;
 
             
-            // const title = seat.querySelector("p").innerText;
+            const title = seat.querySelector("p").innerText;
     
             // const clas = seat.querySelector("h6").innerText;
     
             // const price = seat.querySelector("span").innerText;
     
-            // const titleContainer = document.getElementById("title-container");
+            const titleContainer = document.getElementById("title-container");
             // // console.log(titleContainer);
 
             // // const div = document.createElement("div");
     
-            // const p = document.createElement("li");
-            // p.innerText = title;
-            // titleContainer.appendChild(p);
+            const p = document.createElement("li");
+            p.innerText = title;
+            titleContainer.appendChild(p);
             
     
             // const h6 = document.createElement("li");
@@ -125,13 +133,10 @@ btn.addEventListener("click", function(){
    const couponElement = document.getElementById("input-field").value;
    console.log(couponElement);
 
-   
-
     if(totalPrice > 1600){
         if(couponElement === "NEW15" || couponElement === "Couple 20"){
             
-            // const visible = document.getElementById("apply-button");
-            // visible.style.display = "none";
+            
             hide();
             
             const discountElement = document.getElementById("discountPrice");
@@ -146,8 +151,8 @@ btn.addEventListener("click", function(){
         
         else{
             alert("Invalid Coupon Code");
-            return;
             document.getElementById("input-field").value = "";
+            
         }
     }
 
@@ -159,14 +164,33 @@ btn.addEventListener("click", function(){
     
 });
 
+const number = document.getElementById("number");
+const bttn = document.getElementById("disabled");
+
+number.addEventListener("keyup", function(e){
+    const value = e.currentTarget.value;
+
+    if(value === ""){
+        bttn.disabled = true;
+    }
+
+    else{
+        bttn.disabled = false;
+    }
+
+    
+});
 
 function next(){
+
+    
     const next = document.getElementById("next");
     next.classList.add("hidden");
 
     const popUp = document.getElementById("popUp");
     popUp.classList.remove("hidden"); 
 }
+
 
 
 
